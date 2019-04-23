@@ -36,7 +36,6 @@ export default class Home extends Component {
       t,
       store
     } = this.props;
-    console.log(store);
     return (
       <div>
         <ReactHelmet
