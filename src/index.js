@@ -9,10 +9,7 @@ import { createGenerateClassName, createMuiTheme, jssPreset } from '@material-ui
 import theme from './theme';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { create } from 'jss';
-import { Provider } from 'react-redux';
-import store from './store';
-import history from './store/history';
-import { ConnectedRouter } from 'connected-react-router/immutable';
+import { BrowserRouter as Router } from 'react-router-dom';
 const jss = create({
   ...jssPreset()
 });
@@ -24,11 +21,9 @@ ReactDOM.render(
   <I18nextProvider i18n={i18n}> 
     <MuiThemeProvider theme={createMuiTheme(theme)}>
       <JssProvider jss={jss} generateClassName={generateClassName}>
-        <Provider store={store}>
-          <ConnectedRouter history={history}>
-              <App />
-          </ConnectedRouter>
-        </Provider>
+        <Router>
+            <App />
+        </Router>
       </JssProvider>
     </MuiThemeProvider>
    </I18nextProvider> ,
