@@ -3,6 +3,8 @@ import { reducer as formReducer } from 'redux-form';
 import { connectRouter } from 'connected-react-router/immutable';
 
 // generic
+import ping from './ping';
+import users from './usersEpic';
 import modals from './modals';
 import routing from './routing';
 import loading from './loading';
@@ -17,4 +19,8 @@ export default (history) => combineReducers({
   modals,
   loading,
   fileUploaders,
+
+  // rxJS examples
+  ping,
+  users
 });
